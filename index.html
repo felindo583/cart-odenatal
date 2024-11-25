@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Natal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Som de Natal -->
+    <audio autoplay loop>
+        <source src="christmas-winter-whimsy-264703.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Animação de neve -->
+    <div class="snow"></div>
+
+    <!-- Renas Pulando no canto inferior direito -->
+    <div class="reindeer">🦌</div>
+    <div class="reindeer">🦌</div>
+    <div class="reindeer">🦌</div>
+    <div class="reindeer">🦌</div>
+    <div class="reindeer">🦌</div>
+
+    <!-- Cartão de Natal -->
+    <div class="card">
+        <div class="card-content">
+            <div class="icons">
+                <img src="D_NQ_NP_825710-MLB72953309057_112023-O.webp" alt="Icone 1">
+                <img src="boneco-de-neve-um-dos-principais-simbolos-do-natal-celebrado-no-hemisferio-norte-titulo-boneco-neve.webp" alt="Icone 2">
+                <img src="images.jpg" alt="Icone 3">
+                <img src="10157263-m.jpg" alt="Icone 4">
+                <img src="istockphoto-492120978-612x612.jpg" alt="Icone 5">
+                <img src="10146105-m.jpg" alt="Icone 6">
+            </div>
+            <h1>FELIZ NATAL!</h1>
+            <p>Boas festas! Espero que você tenha um ano maravilhoso cheio de amor, risos e presentes!</p>
+            <p><strong>Com carinho,<br>Seu amigo, Felipe.</strong></p>
+        </div>
+    </div>
+
+    <script>
+        // Função para gerar flocos de neve
+        function createSnowflakes() {
+            const snowContainer = document.createElement('div');
+            snowContainer.classList.add('snow');  // Adiciona a div de neve ao corpo da página
+            document.body.appendChild(snowContainer);
+
+            for (let i = 0; i < 100; i++) {  // Cria 100 flocos de neve
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.textContent = '❄';  // Usando o caractere de floco de neve
+                snowflake.style.left = `${Math.random() * 100}vw`;  // Posição aleatória na largura
+                snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`;  // Duração aleatória da animação
+                snowflake.style.animationDelay = `${Math.random() * 5}s`;  // Atraso aleatório
+                snowContainer.appendChild(snowflake);
+            }
+        }
+
+        // Chama a função para criar os flocos de neve quando a página carregar
+        window.onload = createSnowflakes;
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* Estilos do corpo */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e64545;  /* Cor de fundo do site */
+    background-image: url('pngtree-merry-christmas-wood-plank-texture-background-image_457776.jpg'); /* Imagem de fundo */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;  /* Necessário para posicionar a neve */
+    color: #fff;
+}
+
+/* Estilos do cartão */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;  /* Necessário para garantir que a neve fique atrás do conteúdo */
+    z-index: 1;  /* Garantir que o cartão apareça sobre a neve */
+}
+
+.card-content {
+    background: #ca1d1d;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    z-index: 2;  /* Para garantir que o conteúdo do cartão esteja acima da neve */
+}
+
+/* Imagens dos ícones */
+.icons img {
+    width: 90px;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de hover nas imagens dos ícones */
+.icons img:hover {
+    transform: scale(1.1);  /* Imagens aumentam de tamanho ao passar o mouse */
+}
+
+/* Título */
+h1 {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Brilho no título */
+}
+
+/* Texto do cartão */
+p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Animação de neve caindo */
+.snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;  /* A neve fica atrás de todo o conteúdo */
+}
+
+.snowflake {
+    position: absolute;
+    color: #fff;
+    font-size: 24px;
+    opacity: 0.8;
+    user-select: none;
+    animation: snow 10s linear infinite;
+}
+
+/* Animação dos flocos de neve */
+@keyframes snow {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Animação das renas pulando */
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Estilo das renas no canto inferior direito */
+.reindeer {
+    font-size: 50px;
+    position: absolute;
+    animation: jump 2s ease-in-out infinite;
+    z-index: 2;  /* Garantir que as renas fiquem acima da neve */
+}
+
+/* Posições das renas no canto inferior direito */
+.reindeer:nth-child(1) {
+    bottom: 10px;
+    right: 5%;
+    animation-duration: 2.5s;
+    animation-delay: 0s;
+}
+
+.reindeer:nth-child(2) {
+    bottom: 20px;
+    right: 20%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+.reindeer:nth-child(3) {
+    bottom: 30px;
+    right: 40%;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+}
+
+.reindeer:nth-child(4) {
+    bottom: 40px;
+    right: 60%;
+    animation-duration: 2.5s;
+    animation-delay: 1.5s;
+}
+
+.reindeer:nth-child(5) {
+    bottom: 50px;
+    right: 80%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
